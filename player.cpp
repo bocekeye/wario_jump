@@ -44,7 +44,8 @@ void Player:: setup(float fieldY)
 
 void Player::update()//1秒間に60回呼ばれている
 {
-	
+	if (m_isDead) return;
+
 	m_pos += m_vec;
 
 	//地面とのプレイヤー移動制限
@@ -56,7 +57,7 @@ void Player::update()//1秒間に60回呼ばれている
 		isField = true;
 	}
 
-	if (m_isDead) return;
+	
 	// キー入力処理
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 	if (padState & PAD_INPUT_1)
@@ -68,6 +69,14 @@ void Player::update()//1秒間に60回呼ばれている
 		
 	}
 	m_vec.y += kGravity;
+	if (padState & PAD_INPUT_2)
+	{
+		m_vec.x = 3;
+	}
+	else
+	{
+		m_vec.x = 0;
+	}
 
 
 
