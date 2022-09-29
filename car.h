@@ -31,7 +31,7 @@ private:
 		kMoveTypeNormal,
 		kMoveTypeStop,
 		kMoveTypeJump,
-		kMoveTypeRetuen,
+		kMoveTypeReturn,
 
 		kMoveTypeNum
 	}MoveType;
@@ -51,6 +51,10 @@ private:
 
 	//車の動き
 	MoveType m_moveType;
+
+	int m_isRestart;
+
+	int m_waitCar;
 
 	//移動開始までの待ち時間(フレーム数）
 	int m_waitFrame;

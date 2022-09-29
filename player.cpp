@@ -9,9 +9,9 @@ namespace
 	constexpr float kSizeY = 128.0f;
 
 	//ジャンプ力
-	constexpr float kJumpAcc = -16.0f;
+	constexpr float kJumpAcc = -13.0f;
 	//重力
-	constexpr float kGravity = 0.5f;
+	constexpr float kGravity = 0.6f;
 }
 
 Player::Player()
@@ -57,7 +57,6 @@ void Player::update()//1秒間に60回呼ばれている
 		isField = true;
 	}
 
-	
 	// キー入力処理
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 	if (padState & PAD_INPUT_1)
@@ -66,9 +65,9 @@ void Player::update()//1秒間に60回呼ばれている
 		{
 			m_vec.y = kJumpAcc; //ジャンプ開始
 		}
-		
 	}
 	m_vec.y += kGravity;
+
 	if (padState & PAD_INPUT_2)
 	{
 		m_vec.x = 3;
@@ -77,8 +76,6 @@ void Player::update()//1秒間に60回呼ばれている
 	{
 		m_vec.x = 0;
 	}
-
-
 
 	//if (padState & PAD_INPUT_1)
 	//{

@@ -53,7 +53,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
 			player.setDead(true);
 		}
-
 		// ’n–Ê‚Ì•`‰æ
 		DrawLine(0, kFieldY, Game::kScreenWidth, kFieldY, GetColor(255, 255, 255));
 		player.draw();
