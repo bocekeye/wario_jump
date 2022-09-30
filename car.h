@@ -52,7 +52,10 @@ private:
 	//Ô‚Ì“®‚«
 	MoveType m_moveType;
 
+	//Ä“oêƒtƒ‰ƒO
 	int m_isRestart;
+	//kMoveType,kMoveReturn—p•Ï”
+	int m_stopFrame;
 
 	int m_waitCar;
 

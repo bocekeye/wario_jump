@@ -185,4 +185,10 @@ void Car::updateReturn()
 		m_vec.x *= -1;
 	}
 
+	//‰æ–ÊŠO‚Éo‚½‚çI—¹
+	if ((m_stopFrame >= 60) && (m_pos.x > Game::kScreenWidth))
+	{
+		m_isRestart = true;
+	}
+
 }
